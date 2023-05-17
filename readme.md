@@ -11,7 +11,7 @@
 
 ## Project Structure
 
-<img src="images/aws_cloud_structure_p2.png" alt="project-1-aws" >
+<!-- <img src="images/asd.png" alt="project-aws" > -->
 
 <!-- GETTING STARTED -->
 
