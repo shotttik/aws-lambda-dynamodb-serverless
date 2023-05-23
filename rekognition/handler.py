@@ -70,13 +70,12 @@ def lambda_handler(event, context):
         object_key = urllib.parse.unquote_plus(
             record['s3']['object']['key'])
 
-        bucket_location = boto3.client(
-            's3').get_bucket_location(Bucket=bucket_name)
-        object_url = "https://s3-{0}.amazonaws.com/{1}/{2}".format(
-            bucket_location['LocationConstraint'],
+        # bucket_location = boto3.client(
+        #     's3').get_bucket_location(Bucket=bucket_name)
+        object_url = "https://{0}.s3.amazonaws.com/{1}".format(
             bucket_name,
             object_key)
-
+        print(object_url)
         response = requests.post(
             'https://carnet.ai/recognize-url', data=object_url)
         status_code = response.status_code
@@ -92,6 +91,8 @@ def lambda_handler(event, context):
             time.sleep(0.5)
         elif status_code == 500:
             err = "Image doesn't contain a car"
+            print(err)
+            print(response.json()['error'])
             if response.json()['error'] == err:
                 # saving data from recognize
                 put_labels_in_db(get_image_labels(bucket_name, object_key), object_key,
