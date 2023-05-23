@@ -44,8 +44,8 @@ class Client:
 
         await asyncio.to_thread(s3.upload_file, file_path, self.bucket_name, destination_path)
         print(f"Uploaded: {file_path}")
-        file_name = re.findall(r'[^\/]+(?=\.)', file_path)[0]
-        self.set_object_access_policy(file_name)
+        file_name = file_path.split("\\")[-1]
+        # self.set_object_access_policy(file_name)
 
     async def recursive_image_upload(self, directory):
         tasks = []
@@ -59,8 +59,8 @@ class Client:
 
         await asyncio.gather(*tasks)
 
-    @staticmethod
     def set_object_access_policy(self, file_name):
+        print(file_name)
         try:
             response = self.client.put_object_acl(
                 ACL="public-read",

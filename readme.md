@@ -11,7 +11,7 @@
 
 ## Project Structure
 
-<!-- <img src="images/asd.png" alt="project-aws" > -->
+<img src="images/projectt.drawio.png" alt="project-aws" >
 
 <!-- GETTING STARTED -->
 
@@ -84,7 +84,7 @@ cd ..
 Run
 
 ```cmd
-python source/myauto.py
+python source\myauto.py
 ```
 
 ### Upload Images and it will do other magic tricks...
@@ -92,7 +92,7 @@ python source/myauto.py
 Run
 
 ```cmd
-python source/main.py bucket --name taskbtu -u
+python source\main.py bucket --name taskbtu -u
 ```
 
 ### Note! : check result in DynamoDB

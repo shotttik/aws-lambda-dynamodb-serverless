@@ -1,7 +1,7 @@
 {
   "lambdaRole": "arn:aws:iam::856718181672:role/LabRole",
   "region": "us-east-1",
-  "dynamoDBtable": "carnetRespDB",
-  "secondDynamoDBtable": "rekognitionAnalyDB",
-  "s3BucketName": "rekognition-15-btu"
+  "dynamoDBtable": "carnetResponse",
+  "secondDynamoDBtable": "rekognitionAnalyze",
+  "s3BucketName": "rekognition-61-btu"
 }
