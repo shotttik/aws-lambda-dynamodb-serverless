@@ -85,7 +85,7 @@ resources:
         OwnershipControls:
           Rules:
             - ObjectOwnership: BucketOwnerPreferred
-          AccessControl: AwsExecRead
+        AccessControl: AwsExecRead
     MyBucketPolicy:
       Type: "AWS::S3::BucketPolicy"
       Properties:
